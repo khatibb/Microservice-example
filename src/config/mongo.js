@@ -1,11 +1,11 @@
-const mongoose = require('mongoose')
-module.exports = (URL) => {
+var mongoose = require('mongoose')
+module.exports = function(URL) {
     mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true })
-    const db = mongoose.connection
+    var db = mongoose.connection
 
     db.on('error', console.error.bind(console, 'connection error:'))
 
-    db.once('open', () => {
+    db.once('open', function() {
         console.log('Connected to MongoDB on ' + URL)
     })
 }

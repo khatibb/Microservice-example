@@ -1,7 +1,7 @@
-const app = require('./app')
+var app = require('./app')
 
-module.exports = (port) => {
-    app.listen(port, () => {
-        console.log(`Listening on port ${port}`)
+module.exports = function(port) {
+    app.listen(port, function() {
+        console.log('Listening on port ' + port)
     })
 }
