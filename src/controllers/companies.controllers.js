@@ -1,7 +1,7 @@
 var companies = require('../models/companies')
 var _ = require('lodash')
 var async = require('async')
-
+//async Library is used to help with managing callback for readability and void callback hell
 
 var companiesController = {
 
@@ -80,21 +80,43 @@ var companiesController = {
             })
 
         }
-        companies.findOneAndUpdate({ name: displayName.toLowerCase() }, { $set: { displayName: toUpdateName } },
-            function(err, company) {
+        //Im using FindOne+save since findOneAndUpdate doesnt trigger the 'save' pre-hook
+        async.waterfall([
 
-                if (!err && company) {
-                    return res.status(200).json({
-                        success: true,
-                        message: 'Company name update successfully'
+            function getCompany(next) {
+                companies.findOne({ name: displayName.toLowerCase() },
+                    function(err, company) {
+                        if (err || !company) {
+                            return res.status(422).json({
+                                success: false,
+                                message: 'Couldnt find company'
+                            })
+                        } else if (company) {
+                            next(null, company)
+                        }
+                    }
+                )
+            },
+
+            function saveCompany(company) {
+                company.displayName = toUpdateName
+                company.save(function(err, company) {
+                    if (!err && company) {
+                        return res.status(200).json({
+                            success: true,
+                            message: 'Company updated successfully'
+                        })
+                    }
+                    return res.status(422).json({
+                        success: false,
+                        message: 'Couldnt update company'
                     })
-                }
-                return res.status(422).json({
-                    success: false,
-                    message: 'Couldnt update company'
                 })
+            }
 
-            })
+        ])
+
     }
+    //// END OF UPDAET COMPANY//
 }
 module.exports = companiesController
