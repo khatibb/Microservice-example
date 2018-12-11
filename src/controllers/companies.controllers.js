@@ -82,7 +82,7 @@ var companiesController = {
         }
         //Im using FindOne+save since findOneAndUpdate doesnt trigger the 'save' pre-hook
         async.waterfall([
-
+            //1
             function getCompany(next) {
                 companies.findOne({ name: displayName.toLowerCase() },
                     function(err, company) {
@@ -97,7 +97,7 @@ var companiesController = {
                     }
                 )
             },
-
+            //2
             function saveCompany(company) {
                 company.displayName = toUpdateName
                 company.save(function(err, company) {
