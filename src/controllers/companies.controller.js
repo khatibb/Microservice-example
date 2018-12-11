@@ -1,7 +1,7 @@
 var companies = require('../models/companies')
 var _ = require('lodash')
 var async = require('async')
-//async Library is used to help with managing callback for readability and void callback hell
+//async Library is used to help with managing callbacks for readability and avoiding callback hell
 
 var companiesController = {
 
