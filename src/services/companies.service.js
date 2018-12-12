@@ -1,1 +1,0 @@
-var companies = require('./models/companies')
