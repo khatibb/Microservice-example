@@ -16,7 +16,7 @@ var companiesController = {
         if (!displayName) {
             return res.status(422).json({
                 success: false,
-                message: 'Request is missing parameters!'
+                message: 'Request is missing a parameter(s)!'
             })
 
         }
@@ -76,7 +76,7 @@ var companiesController = {
         if (!displayName || !toUpdateName) {
             return res.status(422).json({
                 success: false,
-                message: 'Request is missing parameters!'
+                message: 'Request is missing a parameter(s)!'
             })
 
         }
