@@ -4,7 +4,7 @@ function removeUser(req, res) {
     var companyName = req.body.companyName
     var workSpaceName = req.body.workSpaceName
     var email = req.body.email
-    var arr = new Array(email)
+
 
     companies.updateOne({
         $and: [
@@ -15,10 +15,7 @@ function removeUser(req, res) {
     }, { $pull: { 'workspaces.$.users': { email: email } } }, function(err, result) {
 
         if (err) {
-            // var message = 'Company or the work space within that company doesnt exist !'
-
-            var message = 'an error occured please check the log(s)' + err
-
+            var message = 'an error occured please check the log(s)'
             return res.status(422).json({
                 success: false,
                 message: message,

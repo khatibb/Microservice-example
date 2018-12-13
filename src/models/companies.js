@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-
+// _id: { type: String, default: uuid.v1 },
 
 var user = new mongoose.Schema({
     // email has to be unique withing the context of the workspace it belongs to

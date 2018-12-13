@@ -3,6 +3,7 @@ var companies = require('../models/companies')
 //Helper Functions
 var getObjectIndex = require('./helpers/getObjectIndex')
 var checkIfExists = require('./helpers/checkIfExists')
+var _ = require('lodash')
 
 function addUser(req, res) {
 
@@ -34,7 +35,12 @@ function addUser(req, res) {
             })
         }
         //make sure the email isnt used 
+        var tt = _.isNil(company.workspaces.users)
+        var tx = _.isEmpty(company.workspaces.users)
+        var ty = _.isLength(company.workspaces.users)
 
+        // console.log(tt, tx, ty)
+        // res.json({ xx: tt + '' + tx + '' + ty })
         var emailExists = checkIfExists(company.workspaces.users, 'email', email)
 
         if (!emailExists) {
