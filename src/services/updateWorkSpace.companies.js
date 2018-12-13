@@ -8,7 +8,7 @@ function updateWorkSpace(req, res) {
     var toUpdateName = req.body.toUpdateName //  WorkSpace new name to be update
     companies.findOne({
         $and: [
-            { displayName: companyName },
+            { name: companyName.toLowerCase() },
             { 'workspaces.name': workSpaceName.toLowerCase() }
         ]
     }, function(err, company) {

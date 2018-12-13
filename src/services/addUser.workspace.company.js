@@ -1,9 +1,9 @@
 //Model
 var companies = require('../models/companies')
-//Helper Functions
+    //Helper Functions
 var getObjectIndex = require('./helpers/getObjectIndex')
 var checkIfExists = require('./helpers/checkIfExists')
-var _ = require('lodash')
+
 
 function addUser(req, res) {
 
@@ -34,15 +34,10 @@ function addUser(req, res) {
                 message: 'couldnt find a workspace with that name'
             })
         }
-        //make sure the email isnt used 
-        var tt = _.isNil(company.workspaces.users)
-        var tx = _.isEmpty(company.workspaces.users)
-        var ty = _.isLength(company.workspaces.users)
+        //make sure the email isnt used in the corresponding work space
 
-        // console.log(tt, tx, ty)
-        // res.json({ xx: tt + '' + tx + '' + ty })
-        var emailExists = checkIfExists(company.workspaces.users, 'email', email)
 
+        var emailExists = checkIfExists(company.workspaces[Index].users, 'email', email)
         if (!emailExists) {
             //if the email doesnn't exist -> safe to add user 
             var newUser = {

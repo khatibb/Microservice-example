@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
-
-// _id: { type: String, default: uuid.v1 },
+var uuidv1 = require('uuid/v1')
 
 var user = new mongoose.Schema({
     // email has to be unique withing the context of the workspace it belongs to
@@ -10,6 +9,7 @@ var user = new mongoose.Schema({
 
 
 var workSpace = new mongoose.Schema({
+    _id: { type: String, default: uuidv1() },
     displayName: { type: String, required: true },
     //NAME HAS TO BE UNIQUE WITHIN THE COMPANY IT BELONGS TO -> Query?
     name: { type: String, index: true },
@@ -19,6 +19,7 @@ var workSpace = new mongoose.Schema({
 
 
 var companies = new mongoose.Schema({
+    _id: { type: String, default: uuidv1() },
     displayName: { type: String, required: true },
     name: { type: String, unique: true, index: true },
     workspaces: [workSpace]

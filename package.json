@@ -15,6 +15,7 @@
         "lodash": "^4.17.11",
         "mongoose": "^5.3.15",
         "nodemon": "^1.18.8",
+        "uuid": "^3.3.2",
         "validator": "^10.9.0"
     },
     "devDependencies": {
