@@ -1,6 +1,6 @@
 //Model
 var companies = require('../models/companies')
-    //Helper Functions
+//Helper Functions
 var getObjectIndex = require('./helpers/getObjectIndex')
 var checkIfExists = require('./helpers/checkIfExists')
 
@@ -37,11 +37,11 @@ function addUser(req, res) {
         //make sure the email isnt used in the corresponding work space
 
 
-        var emailExists = checkIfExists(company.workspaces[Index].users, 'email', email)
+        var emailExists = checkIfExists(company.workspaces[Index].users, 'email', email.toLowerCase())
         if (!emailExists) {
             //if the email doesnn't exist -> safe to add user 
             var newUser = {
-                email: email,
+                email: email.toLowerCase(),
                 role: role
             }
 
