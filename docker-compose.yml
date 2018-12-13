@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+  server:
+    build: .
+    command: npm start
+    ports: 
+      - "5000:5000"
+    links:
+      - db:mongodb
+    volumes:
+      # - /app/node_modules
+      - .:/app
+    restart: on-failure
+    depends_on:
+      - db
+    environment:
+      - PORT=5000
+      - MONGO_URL=mongodb://mongodb:27017/Business
+      
+  db:
+    image: mongo
+    volumes:  
+      - /data/mongo:/data/db
+    logging:
+      driver: none
+    ports: 
+      - "27017:27017"
