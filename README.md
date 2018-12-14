@@ -12,11 +12,12 @@
 1.The project is coded strictly using callbacks
 
 # API Routes & their params 
-  # all of the requests are ->POST
-  # send as the body of the req as 'application/x-www-form-urlencoded'
+   all of the requests are ->POST
+  send as the body of the req as 'application/x-www-form-urlencoded'
+  
 1.localhost:8080/api/v1/createcompany
-   .displayName:unique
- 
+  .displayName:unique
+  
 2.localhost:8080/api/v1/updatecompany
     .displayName
     .toUpdateName
