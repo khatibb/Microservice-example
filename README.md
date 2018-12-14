@@ -12,34 +12,34 @@
 1.The project is coded strictly using callbacks
 
 # API Routes & their params 
-   all of the requests are ->POST
-  send as the body of the req as 'application/x-www-form-urlencoded'
+   all of the requests are ->POST <br />
+  send as the body of the req as 'application/x-www-form-urlencoded'<br />
   
-1.localhost:8080/api/v1/createcompany
-  .displayName:unique
+1.localhost:8080/api/v1/createcompany<br />
+  .displayName<br />
   
-2.localhost:8080/api/v1/updatecompany
-    .displayName
-    .toUpdateName
+2.localhost:8080/api/v1/updatecompany<br />
+    .displayName<br />
+    .toUpdateName<br />
 
 
-3.localhost:8080/api/v1/company/createworkspace
-    .companyName
-    .workSpaceName
+3.localhost:8080/api/v1/company/createworkspace<br />
+    .companyName<br />
+    .workSpaceName<br />
 
-4.localhost:8080/api/v1/company/updateworkspace
-    .companyName
-    .workSpaceName
-    .toUpdateName
+4.localhost:8080/api/v1/company/updateworkspace<br />
+    .companyName<br />
+    .workSpaceName<br />
+    .toUpdateName<br />
 
-5.localhost:8080/api/v1/company/workspace/addUser
-   .companyName
-   .workSpaceName
-   .email
-   .role  : has to be {admin OR basic}
+5.localhost:8080/api/v1/company/workspace/addUser<br />
+   .companyName<br />
+   .workSpaceName<br />
+   .email<br />
+   .role  : has to be {admin OR basic}<br />
    
-6.localhost:8080/api/v1/company/workspace/removeUser
-    .companyName:
-    .workSpaceName:
+6.localhost:8080/api/v1/company/workspace/removeUser<br />
+    .companyName<br />
+    .workSpaceName<br />
     .email:
 
