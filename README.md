@@ -13,7 +13,7 @@
 
 # API Routes & their params 
    all of the requests are ->POST <br />
-  send as the body of the req as 'application/x-www-form-urlencoded'<br />
+  send  the body as of the req as 'application/x-www-form-urlencoded'<br />
   
 1.localhost:8080/api/v1/createcompany<br />
   .displayName<br />
