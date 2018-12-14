@@ -39,7 +39,8 @@ function updateCompany(req, res) {
                         if (!err && company) {
                             return res.status(200).json({
                                 success: true,
-                                message: 'Company updated successfully'
+                                message: 'Company updated successfully',
+                                company: company
                             })
                         }
                         return res.status(422).json({
