@@ -5,8 +5,8 @@
 2. remove repeated code blocks -> refactor into Mediator design pattern
 
 # How to Run
-1. cd into each microservice directory -> npm install
-2. in the root directioy -> docker-compose up (sudo it if needed)
+
+1. in the root directioy -> docker-compose up (sudo it if needed)
 
 # Notes
 1.The project is coded strictly using callbacks
