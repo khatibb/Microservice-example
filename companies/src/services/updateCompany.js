@@ -25,7 +25,7 @@ function updateCompany(req, res) {
                     if (err) {
                         message = 'an error occured please check the log(s)'
                     }
-                    return res.status(422).json({
+                    return res.status(409).json({
                         success: false,
                         message: message
                     })
@@ -39,8 +39,8 @@ function updateCompany(req, res) {
                         if (!err && company) {
                             return res.status(200).json({
                                 success: true,
-                                message: 'Company updated successfully',
-                                company: company
+                                message: 'Company updated successfully'
+
                             })
                         }
                         return res.status(422).json({

@@ -26,8 +26,7 @@ function createCompany(req, res) {
                     if (!err && company) {
                         return res.status(200).json({
                             success: true,
-                            message: 'Company created successfully',
-                            company: company
+                            message: 'Company created successfully'
                         })
                     }
                     return res.status(422).json({
