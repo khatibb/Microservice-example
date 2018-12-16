@@ -1,5 +1,6 @@
 var companies = require('../models/companies')
 
+
 function createCompany(req, res) {
     var displayName = req.body.displayName
 
@@ -18,6 +19,7 @@ function createCompany(req, res) {
             } else {
 
                 var newCompany = new companies({
+
                     displayName: displayName
                 })
 
@@ -31,7 +33,7 @@ function createCompany(req, res) {
                     }
                     return res.status(422).json({
                         success: false,
-                        message: 'an error occured please check the log(s)'
+                        message: 'an error occured please check the log(s)' + err
                     })
 
                 })

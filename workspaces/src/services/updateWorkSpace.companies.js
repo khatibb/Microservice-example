@@ -46,7 +46,7 @@ function updateWorkSpace(req, res) {
 
 
             } else {
-                return res.status(200).json({
+                return res.status(422).json({
                     success: true,
                     message: 'couldnt find workspace '
                 })

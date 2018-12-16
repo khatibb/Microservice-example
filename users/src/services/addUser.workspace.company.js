@@ -60,7 +60,7 @@ function addUser(req, res) {
 
             })
         } else {
-            return res.status(422).json({
+            return res.status(409).json({
                 success: false,
                 message: 'email already exists'
             })
