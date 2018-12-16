@@ -1,12 +1,16 @@
-# Building a Microservice with Node(es5), Docker and Nginx
+# Building a Microservice with Node(es5), Docker and Nginx 
+# Tested with Mocha & Chai
 
 # Missing features(To-do) :
 1. some extra input validation & sanitization (use joi)
 2. remove repeated code blocks -> refactor into Mediator design pattern
 
 # How to Run
-
-1. in the root directioy -> docker-compose up (sudo it if needed)
+ X-In the Root Directory(first time only): <br/>
+ sudo docker-compose build<br/>
+ 
+ 1-To run the api -> sudo docker-compose up<br/>
+ 2-To run mocha tests -> sudo docker-compose -f docker-compose-test.yml up<br/>
 
 # Notes
 1.The project is coded strictly using callbacks
