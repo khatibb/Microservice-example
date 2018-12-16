@@ -45,7 +45,7 @@ function updateCompany(req, res) {
                         }
                         return res.status(422).json({
                             success: false,
-                            message: 'an error occured please check the log(s)'
+                            message: 'an error occured please check the log(s)' + err
                         })
                     })
 
