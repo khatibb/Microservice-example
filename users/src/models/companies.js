@@ -9,7 +9,7 @@ var user = new mongoose.Schema({
 
 
 var workSpace = new mongoose.Schema({
-    _id: { type: String, default: uuidv1() },
+    _id: { type: String, default: uuidv1 },
     displayName: { type: String, required: true },
     //NAME HAS TO BE UNIQUE WITHIN THE COMPANY IT BELONGS TO -> Query?
     name: { type: String, index: true },
@@ -19,14 +19,14 @@ var workSpace = new mongoose.Schema({
 
 
 var companies = new mongoose.Schema({
-    _id: { type: String, default: uuidv1() },
+    _id: { type: String, default: uuidv1 },
     displayName: { type: String, required: true },
     name: { type: String, unique: true, index: true },
     workspaces: [workSpace]
 }, { timestamps: true })
 
 
-// a pre-hook (s)to generate the the company name(and convert it to lowecase) on demand(before saving )
+// a pre-hook (s)to generate the the company name & generate it's uuidV1
 companies.pre('save', function(next) {
     var companies = this
     companies.name = (companies.displayName).toLowerCase()

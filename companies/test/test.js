@@ -83,19 +83,13 @@ describe('/POST ', function() {
                 res.should.have.status(200)
                 done()
             })
-        // post hook to delete new entry
-        after(function(done) {
-            companies.deleteOne({}, function() {
-                done()
-            })
-        })
+            // post hook to clear DB
+            // after(function(done) {
+            //     companies.deleteOne({}, function() {
+            //         done()
+            //     })
+            // })
     })
 
 
-})
-// clearing the test database
-after(function(done) {
-    companies.deleteOne({}, function() {
-        done()
-    })
 })

@@ -26,7 +26,7 @@ function createWorkSpace(req, res) {
         var aWorkSpaceExists = checkIfExists(company.workspaces, 'name', workSpaceName.toLowerCase())
 
         if (aWorkSpaceExists) {
-            return res.status(422).json({
+            return res.status(409).json({
                 success: false,
                 message: 'a work space with the same name already exists , please pick a new name !'
             })
