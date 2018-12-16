@@ -1,4 +1,4 @@
-# Building a Microservice with Node(es5), Docker and Nginx 
+# Building a Microservice(s) with Node(es5), Docker and Nginx 
 # Tested with Mocha & Chai
 
 # Missing features(To-do) :
